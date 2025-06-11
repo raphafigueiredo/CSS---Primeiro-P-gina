@@ -1,0 +1,313 @@
+/*  FOLHA DE ESTILO EM CASCATA
+OBRIGATÓRIO ; 
+
+id é individual ex.: <h1 id="titulo">Meu Título<*h1>
+no CSS: #titulo {
+            color: blue;
+            font-size: 40px; }
+class é coletivo ex.: <h1 class="texto"> Meu título<*>
+                        <p class="texto">meu texto</>
+no CSS: .texto { color: blue;
+                font-size: 40px; } TANTO O H1 E O P TERÃO A MESMA FORMATAÇÃO!
+*/
+
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin: 44px 0 144px 76px;
+}
+
+.link-header{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #989090;
+    cursor: pointer;
+    margin-right: 23px;
+}
+
+.button-header {
+    background: #665ae1;
+    border-radius: 20.5px;
+    width: 130px;
+    height: 41px;
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.logo-image {
+    width: 568px;
+    height: 500px;
+    margin-left: 125px;
+    display: inline-block;
+}
+
+section {
+    display: inline-block;
+    margin-left: 86px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 122px;
+    color: #515151;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 58px;
+    line-height: 71px;
+    color: #515151;
+}
+
+p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #848484;
+    width: 515px;
+    margin-top: 32px;
+    margin-bottom: 65px;
+
+}
+
+.button-main {
+    background: #adff00;
+    border-radius: 30px;
+    width: 239px;
+    height: 64px;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    color: #000000;
+}
+
+
+@media (max-width: 768px) {
+    .logo-image {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section, header {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+3. Estado hover para botões e links
+Adicione interações ao passar o mouse:
+
+css
+Copiar
+Editar
+.button-header:hover,
+.button-main:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.link-header:hover {
+    color: #665ae1;
+}
+4. Semântica e acessibilidade
+Links .link-header poderiam parecer mais com botões se forem convertidos para <a href="#"> com estilo adequado. Além disso, é importante manter contraste ideal entre textos e fundo.
+
+Se quiser, posso te devolver esse CSS já ajustado com essas melhorias aplicadas. Deseja isso?
+
+
+
+
+
+
+
+Você disse:
+sim
+
+
+O ChatGPT disse:
+Aqui está a versão otimizada do seu CSS com melhorias em layout flexível, responsividade, efeitos de interação, e boas práticas de design:
+
+css
+Copiar
+Editar
+/* Reset global */
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    margin: 44px 0 144px 76px;
+}
+
+.link-header {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: #989090;
+    cursor: pointer;
+    margin-right: 23px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-header:hover {
+    color: #665ae1;
+}
+
+.button-header {
+    background: #665ae1;
+    border-radius: 20.5px;
+    width: 130px;
+    height: 41px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-header:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Layout principal */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 76px;
+    flex-wrap: wrap;
+}
+
+.logo-image {
+    width: 568px;
+    height: auto;
+    max-width: 100%;
+    margin-left: 0;
+}
+
+/* Conteúdo principal */
+section {
+    margin-left: 44px;
+    max-width: 600px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 6.25rem; /* 100px */
+    line-height: 1.2;
+    color: #515151;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 3.625rem; /* 58px */
+    line-height: 1.2;
+    color: #515151;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: #848484;
+    margin-top: 32px;
+    margin-bottom: 65px;
+}
+
+/* Botão principal */
+.button-main {
+    background: #adff00;
+    border-radius: 30px;
+    width: 239px;
+    height: 64px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 2.125rem;
+    color: #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: all 0.3s ease;
+}
+
+.button-main:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .logo-image {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    section {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+        width: 100%;
+    }
+}
